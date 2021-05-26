@@ -34,7 +34,7 @@ def codechefdata(username):
     driver.get(url)
 
     my_dict={"username":username}
-
+    
     #getting rating
     rating = driver.find_element_by_xpath("/html/body/main/div/div/div/aside/div[1]/div/div[1]/div[1]").text
     my_dict.update({"rating":rating})
@@ -67,14 +67,42 @@ def codechefdata(username):
     driver.close()
     return my_dict
 
+def atcoderdata(username):
+    chrome_options=Options()
+    chrome_options.add_argument("--headless")
+    driver=webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+    #driver=webdriver.Chrome(ChromeDriverManager().install())
+    url="https://atcoder.jp/users/"+str(username)
+    driver.get(url)
 
-    
+    my_dict={"status":"success"}
+
+    my_dict.update({"username": username})
+
+    rank=driver.find_element_by_xpath("//*[@id='main-container']/div[1]/div[3]/table/tbody/tr[1]/td").text
+    my_dict.update({"rank":rank})
+
+    rating=driver.find_element_by_xpath("//*[@id='main-container']/div[1]/div[3]/table/tbody/tr[2]/td/span").text
+    my_dict.update({"rating":rating})
+
+    highestrating=driver.find_element_by_xpath("//*[@id='main-container']/div[1]/div[3]/table/tbody/tr[3]/td/span[1]").text
+    my_dict.update({"highestrating":highestrating})
+
+    driver.close()
+
+    return my_dict
+
+
+
+
+
 
 
 
 
 
 if __name__=="__main__":
-    print(codeforcesdata("parvg555"))
-    print(codechefdata("parvg555"))
+    #print(codeforcesdata("parvg555"))
+    #print(codechefdata("parvg555"))
+    print(atcoderdata("tourist"))
 
