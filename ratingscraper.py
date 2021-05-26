@@ -16,8 +16,8 @@ def codeforcesdata(username):
     my_dict={"username": username}
 
     for i in usrdata['result']:
-        name=str(i['firstName']+" "+i['lastName'])
-        my_dict["name"]=name
+        #name=str(i['firstName']+" "+i['lastName'])
+        #my_dict["name"]=name
         my_dict["rating"]=i['rating']
         my_dict["maxrating"]=i['maxRating']
         my_dict["rank"]=i['rank']
@@ -75,6 +75,6 @@ def codechefdata(username):
 
 
 if __name__=="__main__":
-    #print(codeforcesdata("phoenix_aditya"))
-    print(codechefdata("phoenix_aditya"))
+    print(codeforcesdata("parvg555"))
+    print(codechefdata("parvg555"))
 
