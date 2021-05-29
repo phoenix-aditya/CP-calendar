@@ -95,14 +95,8 @@ def atcoderdata(username):
 
 
 
-
-
-
-
-
-
 if __name__=="__main__":
-    #print(codeforcesdata("parvg555"))
-    #print(codechefdata("parvg555"))
+    print(codeforcesdata("parvg555"))
+    print(codechefdata("parvg555"))
     print(atcoderdata("tourist"))
 
