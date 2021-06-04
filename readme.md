@@ -1,2 +1,4 @@
 starting project
-env name - codify
+env name - codify (conda enviornment)
+
+
