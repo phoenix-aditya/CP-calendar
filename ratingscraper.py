@@ -12,6 +12,7 @@ import time
 def codeforcesdata(username):
     url="https://codeforces.com/api/user.info?handles="+str(username)+";"
     usrdata=requests.get(url).json()
+    print(usrdata)
     
     my_dict={"username": username}
 
@@ -65,6 +66,7 @@ def codechefdata(username):
     my_dict.update({"lunchrating":lunchrating})
 
     driver.close()
+    print(my_dict)
     return my_dict
 
 def atcoderdata(username):
@@ -96,7 +98,7 @@ def atcoderdata(username):
 
 
 if __name__=="__main__":
-    print(codeforcesdata("phoenix_aditya"))
+   # print(codeforcesdata("phoenix_aditya"))
     print(codechefdata("phoenix_aditya"))
-    print(atcoderdata("tourist"))
+    #print(atcoderdata("tourist"))
 
